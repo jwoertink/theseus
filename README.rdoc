@@ -8,6 +8,8 @@ There is also an included utility for generating mazes from the command-line.
 
 Note that Theseus requires Ruby 1.9.2 or higher.
 
+** Also note, this version has been edited so it will run with JRuby
+
 == Overview
 
 Theseus supports the following types of mazes:
