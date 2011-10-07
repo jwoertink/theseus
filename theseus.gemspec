@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.summary = "Maze generator for Ruby"
   s.name = 'theseus'
-  s.version = Theseus::Version::STRING
+  s.version = "1.0.2"
   s.files = FileList["README.rdoc", "Rakefile", "lib/**/*.rb", "examples/**/*.rb", "bin/*", "test/**/*.rb"].to_a
   s.executables << "theseus"
   s.add_dependency "chunky_png", "~> 0.12.0"
