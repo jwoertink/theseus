@@ -106,7 +106,7 @@ module Theseus
     # take the maze, and divide all passages in half down the middle, making two passages.
     # Dead-ends become a u-turn, etc. This is why the maze increases in size.
     def to_unicursal(options={})
-      unicursal = OrthogonalMaze.new(options.merge(width: @width*2, height: @height*2, prebuilt: true))
+      unicursal = OrthogonalMaze.new(options.merge(:width => @width*2, :height => @height*2, :prebuilt => true))
 
       set = lambda do |x, y, direction, *recip|
         nx, ny = move(x, y, direction)

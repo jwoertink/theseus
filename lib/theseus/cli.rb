@@ -50,9 +50,9 @@ module Theseus
       @solution = nil
 
       @png_opts = Theseus::Formatters::PNG::DEFAULTS.dup
-      @maze_opts = { mask: nil, width: nil, height: nil,
-        randomness: 50, weave: 0, symmetry: :none, braid: 0, wrap: :none,
-        entrance: nil, exit: nil, algorithm: ALGO_MAP["backtrack"] }
+      @maze_opts = { :mask => nil, :width => nil, :height => nil,
+        :randomness => 50, :weave => 0, :symmetry => :none, :braid => 0, :wrap => :none,
+        :entrance => nil, :exit => nil, :algorithm => ALGO_MAP["backtrack"] }
 
       option_parser.parse!(args)
 
@@ -123,11 +123,11 @@ module Theseus
       step += 1
 
       if @solution
-        solver = @maze.new_solver(type: @solution)
+        solver = @maze.new_solver(:type => @solution)
 
         while solver.step
-          path = solver.to_path(color: @png_opts[:solution_color])
-          write_frame(step, paths: [path])
+          path = solver.to_path(:color => @png_opts[:solution_color])
+          write_frame(step, :paths => [path])
           step += 1
         end
       end
@@ -147,7 +147,7 @@ module Theseus
         else
           exit_at = [enter_at[0], enter_at[1]+1]
         end
-        @maze = @maze.to_unicursal(entrance: enter_at, exit: exit_at)
+        @maze = @maze.to_unicursal(:entrance => enter_at, :exit => exit_at)
       end
 
       if @format == :ascii
@@ -359,7 +359,7 @@ module Theseus
 
       opts.on_tail("-v", "--version", "display the Theseus version and exit") do
         maze = Theseus::OrthogonalMaze.generate(width: 20, height: 4)
-        s = maze.to_s(mode: :lines).strip
+        s = maze.to_s(:mode => :lines).strip
         print s.gsub(/^/, "          ").sub(/^\s*/, "theseus --")
 
         require 'theseus/version'

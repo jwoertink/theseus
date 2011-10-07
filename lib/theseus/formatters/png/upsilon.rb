@@ -21,7 +21,7 @@ module Theseus
 
           canvas = ChunkyPNG::Image.new(width, height, @options[:background])
 
-          metrics = { size: @options[:cell_size] - @options[:cell_padding] * 2 }
+          metrics = { :size => @options[:cell_size] - @options[:cell_padding] * 2 }
           metrics[:s4] = metrics[:size] / 4.0
           metrics[:inc] = 3 * @options[:cell_size] / 4.0
 
