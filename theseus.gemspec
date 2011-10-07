@@ -3,7 +3,14 @@ Gem::Specification.new do |s|
   s.summary = "Maze generator for Ruby"
   s.name = 'theseus'
   s.version = "1.0.2"
-  s.files = FileList["README.rdoc", "Rakefile", "lib/**/*.rb", "examples/**/*.rb", "bin/*", "test/**/*.rb"].to_a
+  s.files = [
+    "README.rdoc", 
+    "Rakefile", 
+    "lib/**/*.rb", 
+    "examples/**/*.rb", 
+    "bin/*", 
+    "test/**/*.rb"
+  ]
   s.executables << "theseus"
   s.add_dependency "chunky_png", "~> 0.12.0"
   s.description = "Theseus is a library for building random mazes."
